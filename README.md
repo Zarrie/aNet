@@ -1,5 +1,3 @@
-# attentionNet (*aNet*) - deep convolutional network for real-time driver monitoring
-
 ![Training images](training_images_stack.jpg)
 
 ## Abstract:
@@ -139,6 +137,81 @@ Reducing it's parameters to 75K we end up with `0.9823 accuracy on train and 0.9
 ### Comparison of the models for given number of parameters
 
 ![Results table](results_table.png)
+
+
+<style type="text/css">
+table {
+color: #333;
+font-family: Helvetica, Arial, sans-serif;
+width: 640px;
+border-collapse:
+collapse; 
+border-spacing: 0;
+}
+td, th {
+border: 1px solid transparent; /* No more visible border */
+height: 30px;
+}
+th {
+background: #DFDFDF; /* Darken header a bit */
+font-weight: bold;
+}
+td {
+background: #FAFAFA;
+text-align: center;
+}
+table tr:nth-child(odd) td{
+background-color: white;
+}
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">10000</th>
+      <th colspan="2" halign="left">80000</th>
+      <th colspan="2" halign="left">820000</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>test</th>
+      <th>train</th>
+      <th>test</th>
+      <th>train</th>
+      <th>test</th>
+      <th>train</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>aNet</th>
+      <td>0.916</td>
+      <td>0.940</td>
+      <td>0.991</td>
+      <td>0.991</td>
+      <td>0.993</td>
+      <td>0.997</td>
+    </tr>
+    <tr>
+      <th>aNet-DN</th>
+      <td>0.941</td>
+      <td>0.948</td>
+      <td>0.973</td>
+      <td>0.985</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>aSqueezeNet</th>
+      <td>0.918</td>
+      <td>0.915</td>
+      <td>0.975</td>
+      <td>0.982</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 ### _Please, note that though the numeric results as accuracy and coverage are equal for some models, there is difference in the models' processing time and size!_
 
