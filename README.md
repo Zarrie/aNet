@@ -1,5 +1,3 @@
-![Training images](training_images_stack.jpg)
-
 ## Abstract:
 Recently there is a focus on driver monitoring systems in the automotive industry. The increasing number of traffic accidents due to fatigue and distraction became a problem of serious concern to society.
 According to the CDC motor vehicle safety division, [one in five car accidents](https://www.cdc.gov/motorvehiclesafety/distracted_driving/) is caused by a distracted driver. Sadly, this translates to 
@@ -7,6 +5,8 @@ According to the CDC motor vehicle safety division, [one in five car accidents](
 There are many approaches trying to effectively detect driver's fatigue or distraction, but all of them suffer from either great complexity, leading to inability to be integrated in low computational power device, or
 oversimplicity, which leads to low accuracy of the final results of the method. 
 Convolutional neural netowrks (CNNs) have a huge advantage over this problem as they offer robust models with complex features which are learnt instead of explicitly programmed. 
+
+![Training images](training_images_stack.jpg)
 
 ## Introduction:
 This article's aim is to propose real-time driver monitoring system with focus to distraction. The article presents state-of-the-art deep convolutional neural network achieving accuracy over 99.7% 
@@ -135,9 +135,6 @@ Starting with 120K trainable parameters model we achieve `0.982 accuracy on trai
 Reducing it's parameters to 75K we end up with `0.9823 accuracy on train and 0.9755 on validation` and really fast and small model.
 
 ### Comparison of the models for given number of parameters
-
-![Results table](results_table.png)
-
 
 <style type="text/css">
 table {
