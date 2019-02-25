@@ -108,13 +108,13 @@ After `30 epochs` with `batch size 32` the model achieves `0.9972 accuracy on th
 
 ### Compressed CNN trained using _dark knowledge_
 
-Since the first approach is too computationally heavy we cannot achieve real-time prediction on embedded system, so we are going to use one really ![simple, but interesting](http://fastml.com/geoff-hintons-dark-knowledge/) 
+Since the first approach is too computationally heavy we cannot achieve real-time prediction on embedded system, so we are going to use one really [simple, but interesting](http://fastml.com/geoff-hintons-dark-knowledge/) 
 idea proposed by *Geoff Hinton*.
 
 The basic idea of the solution is to train a simpler model that mimics the CNN. To make it work, one replaces the actual class labels with predictions from the model we wish to mimic.
 This great idea can also be used to mimic complex ensemble models which results in even better compression as final result.
 
-Really good brief explanation of the technique given from ![Rich Caruana](http://www.cs.cornell.edu/~caruana/):
+Really good brief explanation of the technique given from [Rich Caruana](http://www.cs.cornell.edu/~caruana/):
 _We take a large, slow, but accurate model and compress it into a much smaller, faster, yet still accurate model. This allows us to separate the models used for learning from the models used to deliver the learned  so that we can train large, complex models such as ensembles, but later make them small enough to fit on a PDA, hearing aid, or satellite. With model compression we can make models 1000 times smaller and faster with little or no loss in accuracy._
 
 So we end up with predicted values from our first model, which we use to train this compressed CNN.
@@ -136,6 +136,7 @@ The main ideas of SqueezeNet are:
  * Downsample late to keep a big feature 
 
 ![SqueezeNet fire module](squeezeNetFireBlock.png)
+_[Source](arXiv:1602.07360v4 [cs.CV] 4 Nov 2016)_
 
 So comes the idea to use SqueezeNet-like architecture to achieve high accuracy and low computational requirement. That's how aSqueezeNet comes.
 It's architecture is the same as the original SqueezeNet, but it's a bit smaller, so it achieves even better speed and size for the problem it solves.
@@ -143,7 +144,7 @@ It's architecture is the same as the original SqueezeNet, but it's a bit smaller
 Starting with 120K trainable parameters model we achieve `0.982 accuracy on train samples and 0.971 on validation samples.`
 Reducing it's parameters to 75K we end up with `0.9823 accuracy on train and 0.9755 on validation` and really fast and small model.
 
-### Comparison of the models
+### Comparison of the models for given number of parameters
 
 ![Results table](results_table.png)
 
@@ -151,7 +152,7 @@ Reducing it's parameters to 75K we end up with `0.9823 accuracy on train and 0.9
 
 ---
 
-#### Pretrained models can be found at ![the aNet github repo](https://github.com/Zarrie/aNet).
+## Pretrained models can be found at [the aNet github repo](https://github.com/Zarrie/aNet).
 
 
 ---
@@ -161,3 +162,5 @@ Reducing it's parameters to 75K we end up with `0.9823 accuracy on train and 0.9
 [1] arXiv:1503.02531v1 [stat.ML] 9 Mar 2015
 
 [2] arXiv:1602.07360v4 [cs.CV] 4 Nov 2016
+
+[3] arXiv:1412.6980v9 [cs.LG] 30 Jan 2017
