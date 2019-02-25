@@ -1,4 +1,4 @@
-# attentionNet (*aNet*) - deep learning network for real-time driver monitoring
+# attentionNet (*aNet*) - deep convolutional network for real-time driver monitoring
 
 ![Training images](training_images_stack.jpg)
 
@@ -31,7 +31,8 @@ The 10 classes to predict are:
  * hair and makeup
  * talking to passenger
 
- #### _In future work I'm going to present bigger dataset with a few more classes, which I find important (eg. smoking, eating, etc.)._
+
+#### _In future I'm going to present bigger dataset with a few more classes, which I find important (eg. smoking, eating, etc.)._
 
 ## Solution
 
@@ -46,16 +47,7 @@ After comparing the results from all of the approaches the article comes with th
 The first described approach is to build CNN and train it on the available dataset using Adam as optimizer and cathegorical crossentropy as loss function.
 
 ![CNN Architecture](architecture.png)
-Fig1: The model is defined as follows:
-```
-96x128x3 input image --> 
-64x3x3 conv (relu) --> 64x3x3 conv (relu) --> 2x2 maxPool --> 
-64x3x3 conv (relu) --> 64x3x3 conv (relu) --> 2x2 maxPool --> 
-128x3x3 conv (relu) --> 128x3x3 conv (relu) --> 2x2 maxPool --> 
-128x3x3 conv (relu) --> 128x3x3 conv (relu) --> 2x2 maxPool --> 
-flatten() --> 64x dense --> 128x dense --> 128x dense --> 10x (softmax). 
-Adam used optimizer and cathegorical crossentropy loss function.
-```
+Fig1: aNet
 
 Here's a summary of the model shown in Fig1:
 ```
@@ -115,6 +107,7 @@ The basic idea of the solution is to train a simpler model that mimics the CNN. 
 This great idea can also be used to mimic complex ensemble models which results in even better compression as final result.
 
 Really good brief explanation of the technique given from [Rich Caruana](http://www.cs.cornell.edu/~caruana/):
+
 _We take a large, slow, but accurate model and compress it into a much smaller, faster, yet still accurate model. This allows us to separate the models used for learning from the models used to deliver the learned  so that we can train large, complex models such as ensembles, but later make them small enough to fit on a PDA, hearing aid, or satellite. With model compression we can make models 1000 times smaller and faster with little or no loss in accuracy._
 
 So we end up with predicted values from our first model, which we use to train this compressed CNN.
@@ -136,7 +129,7 @@ The main ideas of SqueezeNet are:
  * Downsample late to keep a big feature 
 
 ![SqueezeNet fire module](squeezeNetFireBlock.png)
-_[Source](arXiv:1602.07360v4 [cs.CV] 4 Nov 2016)_
+_[Image source](https://arxiv.org/pdf/1602.07360.pdf)_
 
 So comes the idea to use SqueezeNet-like architecture to achieve high accuracy and low computational requirement. That's how aSqueezeNet comes.
 It's architecture is the same as the original SqueezeNet, but it's a bit smaller, so it achieves even better speed and size for the problem it solves.
