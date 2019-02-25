@@ -171,12 +171,12 @@ background-color: white;
     </tr>
     <tr>
       <th></th>
-      <th>test</th>
       <th>train</th>
       <th>test</th>
       <th>train</th>
       <th>test</th>
       <th>train</th>
+      <th>test</th>
     </tr>
   </thead>
   <tbody>
