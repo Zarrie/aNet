@@ -31,7 +31,6 @@ The 10 classes to predict are:
  * hair and makeup
  * talking to passenger
 
-
 #### _In future I'm going to present bigger dataset with a few more classes, which I find important (eg. smoking, eating, etc.)._
 
 ## Solution
