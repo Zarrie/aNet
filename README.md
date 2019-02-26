@@ -16,6 +16,10 @@ after being trained on 20K and validated on 2.5K over 10 classes. Starting with 
 The dataset used for training is provided by _https://www.statefarm.com_ in order to help improve these alarming statistics mentioned above, and better insure their customers, by testing whether dashboard cameras can automatically 
 detect drivers engaging in distracted behaviors.
 
+![Sample image 1](sample_data1.jpg)
+![Sample image 2](sample_data2.jpg)
+![Sample image 3](sample_data3.jpg)
+
 The 10 classes to predict are:
 
  * safe driving
@@ -140,7 +144,7 @@ Reducing it's parameters to 75K we end up with `0.9823 accuracy on train and 0.9
 table {
 color: #333;
 font-family: Helvetica, Arial, sans-serif;
-width: 640px;
+width: auto;
 border-collapse:
 collapse; 
 border-spacing: 0;
