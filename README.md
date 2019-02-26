@@ -16,9 +16,9 @@ after being trained on 20K and validated on 2.5K over 10 classes. Starting with 
 The dataset used for training is provided by _https://www.statefarm.com_ in order to help improve these alarming statistics mentioned above, and better insure their customers, by testing whether dashboard cameras can automatically 
 detect drivers engaging in distracted behaviors.
 
-![Sample image 1](sample_data1.jpg =200x100)
-![Sample image 2](sample_data2.jpg =200x100)
-![Sample image 3](sample_data3.jpg =200x100)
+![Sample image 1](sample_data1.jpg)
+![Sample image 2](sample_data2.jpg)
+![Sample image 3](sample_data3.jpg)
 
 The 10 classes to predict are:
 
